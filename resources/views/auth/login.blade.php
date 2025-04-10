@@ -17,9 +17,9 @@
     <div class="orbit"></div>
 
     <div class="login">
-        <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" />
-        <h2>Welcome to Saferly!</h2>
-        <h3>Keep your data safe!</h3>
+        <img src="{{ asset('assets/images/657557.png') }}" alt="Logo" />
+        <h2>Bienvenido Trimax!</h2>
+        <h3>Sistema de gestion</h3>
 
         @if (session('status'))
             <div style="color: green; text-align: center; margin-bottom: 10px;">
@@ -32,7 +32,7 @@
 
             <div class="textbox">
                 <input required type="email" name="email" value="{{ old('email') }}" />
-                <label>Email</label>
+                <label>Correo</label>
                 @error('email')
                     <small style="color: red;">{{ $message }}</small>
                 @enderror
@@ -40,32 +40,18 @@
 
             <div class="textbox">
                 <input required type="password" name="password" />
-                <label>Password</label>
+                <label>Contraseña</label>
                 @error('password')
                     <small style="color: red;">{{ $message }}</small>
                 @enderror
-            </div>
-
-            <div class="remember">
-                <label style="font-size: 14px;">
-                    <input type="checkbox" name="remember">
-                    Remember me
-                </label>
             </div>
 
             <button type="submit">Login</button>
         </form>
 
         @if (Route::has('password.request'))
-            <a href="{{ route('password.request') }}">Forgot password?</a>
+            <a href="{{ route('password.request') }}">Olvidaste tu contraseña?</a>
         @endif
-
-        <p class="footer">
-            Don't have an account?
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}">Register!</a>
-            @endif
-        </p>
     </div>
 </body>
 
