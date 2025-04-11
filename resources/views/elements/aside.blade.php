@@ -4,17 +4,17 @@
     <div class="sidenav-header">
         <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
             aria-hidden="true" id="iconSidenav"></i>
-        <a class="navbar-brand px-4 py-3 m-0" href="/dashboard" target="_blank">
-            <img src="{{ asset('/assets/images/657557.png') }}" class="navbar-brand-img" width="76" height="76"
+        <a class="navbar-brand px-4 py-3 m-0" href="{{ route('dashboard') }}">
+            <img src="{{ asset('/assets/images/657557.png') }}" class="navbar-brand-img" width="86" height="86"
                 alt="main_logo">
-            <span class="ms-1 text-sm text-dark">Creative Tim</span>
+            <span class="ms-1 text-sm text-dark">Gestion TI - Trimax</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0 mb-2">
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active bg-gradient-dark text-white" href="../pages/dashboard.html">
+                <a class="nav-link active bg-gradient-dark text-white" href="{{ route('dashboard') }}">
                     <i class="material-symbols-rounded opacity-5">dashboard</i>
                     <span class="nav-link-text ms-1">Dashboard</span>
                 </a>
@@ -60,17 +60,21 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark" href="../pages/sign-in.html">
-                    <i class="material-symbols-rounded opacity-5">login</i>
-                    <span class="nav-link-text ms-1">Sign In</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link text-dark" href="../pages/sign-up.html">
                     <i class="material-symbols-rounded opacity-5">assignment</i>
                     <span class="nav-link-text ms-1">Sign Up</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <form method="POST" action="{{ route('logout') }}" id="logout-form">
+                    @csrf
+                    <a href="#" class="nav-link text-dark" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="material-symbols-rounded opacity-5">logout</i>
+                        <span class="nav-link-text ms-1">Cerrar Sesión</span>
+                    </a>
+                </form>
+            </li>
+            
         </ul>
     </div>
     <div class="sidenav-footer position-absolute w-100 bottom-0 ">
